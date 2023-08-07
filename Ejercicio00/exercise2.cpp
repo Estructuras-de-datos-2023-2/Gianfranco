@@ -79,7 +79,7 @@ public:
         } 
         else {
           temp = marker->next();
-          marker->next (temp->next());
+          temp->next(marker->next());
           delete temp;
           temp = 0;
           return 0;
