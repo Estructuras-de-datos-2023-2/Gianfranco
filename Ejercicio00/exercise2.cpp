@@ -67,21 +67,16 @@ public:
       if (marker->value() == item_to_remove) {
         if (temp == 0) { // marker is the first element in the list
           if (marker->next() == 0) {
-            head_ = 0;
+           head_ = marker->next();
             delete marker; // marker is the only element in the list
             marker = 0;
-          } else {
-            head_ = new Node<T>(marker->value(), marker->next());
-            delete marker;
-            marker = 0;
-          }
-          return 0;
+          } 
         } 
         else {
-          temp = marker->next();
+          
           temp->next(marker->next());
-          delete temp;
-          temp = 0;
+          delete marker;
+         
           return 0;
         }
       }
